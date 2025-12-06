@@ -1,7 +1,19 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/julienschmidt/httprouter"
+	"gopkg.in/mgo.v2"
+)
 
 func main() {
-	fmt.Println("helllo")
+	r := httprouter.New()
+	uc := controllers.NewUserController(getSession())
+	r.GET("")
+	r.POST("")
+	r.DELETE("")
+}
+func getSession() *mgo.Session {
+
 }
